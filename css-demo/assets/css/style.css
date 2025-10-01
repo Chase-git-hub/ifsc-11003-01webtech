@@ -62,4 +62,16 @@ header.primary nav li{
   list-style-type:none;
   margin:bottom 5px;
 }
-header.primary nav a{}
+header.primary nav a{
+  color:#ffffff;
+  font-size:.9rem;
+  background-color:rgba(0,0,0,.4);
+  padding:5px 7.5px;
+  border-radius:10px;
+  border:1px solid #000000;
+  transition:0.4s;
+}
+
+header.primary nav a:hover {
+  background-color:rgba(0,0,0,.8);
+}
