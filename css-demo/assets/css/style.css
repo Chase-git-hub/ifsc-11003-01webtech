@@ -36,7 +36,7 @@ header.primary{
 
 header.primary h1{
   font-size:2.4rem;
-  color:#ffffff;
+  color:#000000;
   margin:0;
 }
 
@@ -48,4 +48,18 @@ header.primary h1 a{
 header.primary h2{
   font-size:1.4rem;
   letter-spacing:2px;
+  margin:0;
 }
+
+header.primary nav{}
+header.primary nav ul{
+  padding:0;
+  display:flex;
+  flex-direction:row;
+  justify-content:space-around;
+}
+header.primary nav li{
+  list-style-type:none;
+  margin:bottom 5px;
+}
+header.primary nav a{}
