@@ -37,10 +37,11 @@ header.primary{
 header.primary h1{
   font-size:2.4rem;
   color:#ffffff;
+  margin:0;
 }
 
 header.primary h1 a{  
-  color:#ffffff;
+  color:#000000;
   text-decoration:none;
 }
 
