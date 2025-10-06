@@ -66,9 +66,8 @@ header.primary nav ul{
   display:flex;
   flex-direction:row;
   justify-content:space-around;
-  background:rgb(176, 230, 255);
   max-width:960px;
-  margin: 20px auto;
+  margin: 20px auto 10px;
 }
 header.primary nav li{
   list-style-type:none;
