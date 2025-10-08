@@ -127,11 +127,19 @@ figure{
     color:#EAB46D;
 }
 
+aside[role="complimentary"]{
+  background-color:brown;
+  color: #ffffff;
+}
+
+
+
 
 
 /*------Media Qeuries ---------*/
 
 @media screen and (max-width: 500px) {
+
   header.primary nav ul{
   flex-direction:column;
   gap:20px;
