@@ -154,7 +154,7 @@ article.widget footer{
   display:none;
 }
 
-#colophon{
+body #colophon{
 background-color: #EAB46D;
 padding: 1px;
 color:#000000;
