@@ -128,12 +128,17 @@ figure{
 }
 
 aside[role="complementary"]{
-  background-color: #172635;
+  background-color: #EB896E;
   color: #ffffff;
   padding:40px 0;
 }
 
-
+aside .container{
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  gap:40px;
+}
 
 
 
