@@ -150,6 +150,18 @@ aside .container a:last-child{
   margin-top: 20px;  
 }
 
+article.widget footer{
+  display:none;
+}
+
+#colophon{
+  background-color: #EAB46D;
+  padding:5px;
+  color:#000000;
+  text-align: center;
+}
+
+
 
 
 
