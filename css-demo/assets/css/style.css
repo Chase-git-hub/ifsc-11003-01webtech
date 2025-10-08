@@ -141,7 +141,7 @@ aside .container{
 }
 
 
-aside .container a{
+aside .container a:last-child{
   color:#ffffff;
   display:block;
   text-align: right;
