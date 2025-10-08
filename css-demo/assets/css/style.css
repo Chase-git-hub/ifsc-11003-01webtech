@@ -127,9 +127,10 @@ figure{
     color:#EAB46D;
 }
 
-aside[role="complimentary"]{
-  background-color:brown;
-  color: #ffffff;
+aside[role="complementary"]{
+background: color #eb896e;;
+color: #ffffff;
+  padding:40px 0;
 }
 
 
