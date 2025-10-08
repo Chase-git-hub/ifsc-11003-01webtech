@@ -131,7 +131,7 @@ figure{
 
 /*------Media Qeuries ---------*/
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 500px) {
   header.primary nav ul{
   flex-direction:column;
   gap:20px;
