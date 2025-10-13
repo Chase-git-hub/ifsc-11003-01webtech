@@ -127,6 +127,21 @@ figure{
     color:#EAB46D;
 }
 
+#practice h2{
+  color: #EAB46D;
+  border-bottom:1px dotted #c0c0c0;
+}
+
+#practice a:link, #practice a:visited{
+  color:#EAB46D
+}
+  
+
+
+
+
+
+
 aside[role="complementary"]{
   background-color: #EB896E;
   color: #ffffff;
