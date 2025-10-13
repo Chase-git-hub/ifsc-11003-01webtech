@@ -180,6 +180,11 @@ caption{
 tr:nth-child(even){
 background-color: rgba(0,0,0,.1);
 }
+
+tr:hover{
+background-color: rgba(0,0,0,.3);
+}
+
 th{
 background-color: #EB896E;
 color:#ffffff;
@@ -197,9 +202,6 @@ td:nth-child(n+2){
 text-align: right;  
 }
 
-tr:hover{
-background-color: rgba(0,0,0,.3);
-}
 
 
 
