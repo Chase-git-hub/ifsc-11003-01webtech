@@ -163,8 +163,29 @@ figure{
 }
   
 #practice h3{
-  border-left: 7.5px solid #EAB46D;
+  border-left: 7.5px solid #EB896E;
   padding:7.5px;
+}
+
+table{
+  width:100%;
+  border:1px solid #000000;
+  border-collapse:collapse;
+}
+caption{
+  font-weight: bold;
+  margin: 10px;
+  font-size:1.3rem;
+}
+tr{}
+th{
+background-color: #EB896E;
+color:#ffffff;
+padding:7.5px;
+}
+td{
+border:1px solid #000000;
+padding:5px;  
 }
 
 
