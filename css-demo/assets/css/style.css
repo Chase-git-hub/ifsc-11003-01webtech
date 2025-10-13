@@ -202,6 +202,13 @@ td:nth-child(n+2){
 text-align: right;  
 }
 
+#practice ol{
+  list-style-type: lower-roman;
+}
+
+#practice ul ul{
+  color: red;
+}
 
 
 
