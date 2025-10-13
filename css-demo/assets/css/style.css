@@ -177,7 +177,9 @@ caption{
   margin: 10px;
   font-size:1.3rem;
 }
-tr{}
+tr:nth-child(even){
+background-color: rgba(0,0,0,.1);
+}
 th{
 background-color: #EB896E;
 color:#ffffff;
