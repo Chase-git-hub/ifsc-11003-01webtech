@@ -210,6 +210,25 @@ text-align: right;
   color: red;
 }
 
+#practice dt{
+  font-weight: 700;
+}
+
+/*#practice dt:first-child{
+  padding-top:0;
+}*/
+
+#practice dd{
+  margin:0;
+}
+
+dd + dt{
+margin-top:20px;
+}
+
+
+
+
 
 
 
