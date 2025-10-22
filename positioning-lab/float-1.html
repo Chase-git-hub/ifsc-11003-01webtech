@@ -25,59 +25,70 @@
       margin: 0 auto;
       text-shadow: 2px 2px #000;
       padding: 20px;
-      overflow: hidden;           /* contain floats */
+      overflow: hidden;  /* contain floats */
     }
-
-    /* Each tile is 360px wide.
-       Left tile gets 20px right gutter: 360 + 20 + 360 = 740px (< 760px),
-       so they never wrap. */
 
     #navy {
       background-color: #001f3f;
-      width: 360px; height: 150px;
+      width: 360px;
+      height: 150px;
       float: left;
-      margin-right: 20px;         /* gutter to the right */
-      margin-bottom: 15px;        /* row gap */
-      align-items: center; justify-content: center;
+      margin-right: 20px;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       font-size: 18px;
     }
 
     #teal {
       background-color: #39CCCC;
-      width: 360px; height: 150px;
-      float: left;                /* sit beside #navy */
-      margin-bottom: 10px;
-      align-items: center; justify-content: center;
+      width: 360px;
+      height: 150px;
+      float: left;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       font-size: 18px;
     }
 
     #blue {
       background-color: #0074D9;
-      width: 360px; height: 150px;
+      width: 360px;
+      height: 150px;
       float: left;
-      clear: left;                /* start second row */
+      clear: left;
       margin-right: 20px;
       margin-bottom: 15px;
-      align-items: center; justify-content: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       font-size: 18px;
     }
 
     #aqua {
       background-color: #7FDBFF;
-      width: 360px; height: 150px;
+      width: 360px;
+      height: 150px;
       float: left;
-      margin-bottom: 10px;
-      align-items: center; justify-content: center;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       font-size: 18px;
     }
 
     #footer {
       background-color: #666;
       clear: both;
-      height: 40px; line-height: 40px;
+      height: 40px;
+      line-height: 40px;
       color: #FFF;
       margin-top: 10px;
-      width : 760px;
+      width: 760px; /* perfectly fits inside 800px wrapper with 20px padding on each side */
+      margin-left: auto;
+      margin-right: auto;
     }
 
     h1 {
