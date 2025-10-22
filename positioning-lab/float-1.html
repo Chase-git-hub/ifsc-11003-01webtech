@@ -1,100 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Positioning Lab</title>
-  <style type="text/css">
+  <style>
     /* ---------------Box Sizing----------------- */
-    html {
-      box-sizing: border-box;
-    }
-
-    *,
-    *:before,
-    *:after {
-      box-sizing: inherit;
-    }
+    html { box-sizing: border-box; }
+    *, *::before, *::after { box-sizing: inherit; }
 
     body {
-      background-color: #ECECEC;
-      font-weight: bold;
-      font-family: Tahoma, Geneva, sans-serif;
+      background: #ECECEC;
+      font: bold 16px Tahoma, Geneva, sans-serif;
       color: #FFF;
       text-align: center;
       line-height: 24px;
     }
 
     #wrapper {
-      background-color: #FFF;
+      background: #FFF;
       border: 1px solid #c0c0c0;
       width: 800px;
       margin: 0 auto;
       text-shadow: 2px 2px #000;
-      padding: 20px;
-      overflow: hidden;
+      padding: 20px;              /* inner content width = 760px */
+      overflow: hidden;           /* contain floats */
     }
 
-    /* ---- Individual Box Styles ---- */
+    /* Each tile is 360px wide.
+       Left tile gets 20px right gutter: 360 + 20 + 360 = 740px (< 760px),
+       so they never wrap. */
+
     #navy {
       background-color: #001f3f;
-      width: 370px;
-      height: 150px;
+      width: 360px; height: 150px;
       float: left;
-      margin-right: 20px;
-      margin-bottom: 20px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      margin-right: 20px;         /* gutter to the right */
+      margin-bottom: 20px;        /* row gap */
+      display: flex; align-items: center; justify-content: center;
       font-size: 18px;
     }
 
     #teal {
       background-color: #39CCCC;
-      width: 370px;
-      height: 150px;
-      float: right;
+      width: 360px; height: 150px;
+      float: left;                /* sit beside #navy */
       margin-bottom: 20px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      display: flex; align-items: center; justify-content: center;
       font-size: 18px;
     }
 
     #blue {
       background-color: #0074D9;
-      width: 370px;
-      height: 150px;
+      width: 360px; height: 150px;
       float: left;
-      clear: left;
+      clear: left;                /* start second row */
       margin-right: 20px;
       margin-bottom: 20px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      display: flex; align-items: center; justify-content: center;
       font-size: 18px;
     }
 
     #aqua {
       background-color: #7FDBFF;
-      width: 370px;
-      height: 150px;
-      float: right;
+      width: 360px; height: 150px;
+      float: left;
       margin-bottom: 20px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      display: flex; align-items: center; justify-content: center;
       font-size: 18px;
     }
 
     #footer {
       background-color: #666;
       clear: both;
-      height: 40px;
-      line-height: 40px;
-      color: white;
+      height: 40px; line-height: 40px;
+      color: #FFF;
       margin-top: 10px;
     }
 
@@ -102,10 +83,10 @@
       color: #000;
       font-weight: normal;
       padding: 30px;
+      text-shadow: none;
     }
   </style>
 </head>
-
 <body>
   <h1>float-1</h1>
   <section id="wrapper">
@@ -116,5 +97,4 @@
     <div id="footer">Footer</div>
   </section>
 </body>
-
 </html>
