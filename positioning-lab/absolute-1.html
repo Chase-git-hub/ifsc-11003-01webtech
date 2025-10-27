@@ -1,47 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-  
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Positioning Lab</title>
   <style>
-    /* ---------------Box Sizing----------------- */
+    /* ---------- Reset / base ---------- */
     html { box-sizing: border-box; }
     *, *::before, *::after { box-sizing: inherit; }
 
-    /* ---------------Base----------------- */
     body{
       margin:0;
       background:#ECECEC;
-      font: bold 16px Tahoma, Geneva, sans-serif;
-      color:#FFF;
+      font:bold 16px Tahoma, Geneva, sans-serif;
+      color:#fff;
       text-align:center;
       line-height:24px;
-      text-shadow: 2px 2px #000;
     }
 
     h1{
+      margin:20px 0;
       color:#000;
       font-weight:normal;
-      padding: 40px 0 20px;
-      text-shadow:none;
-      margin:0;
     }
 
-    /* ---------------Wrapper----------------- */
+    /* ---------- Wrapper (anchor for absolute children) ---------- */
     #wrapper{
-      position:relative;                 /* anchor for absolute children */
+      position:relative;
       width:800px;
-      min-height:520px;
+      height:520px;                 /* fixed stage to match the spec */
       margin:0 auto 60px;
-      background:#FFF;
+      background:#fff;
       border:1px solid #c0c0c0;
-      overflow:hidden;                   /* keep corner tiles inside border */
+      overflow:hidden;
     }
 
-    /* ---------------Corner tiles (absolute)----------------- */
+    /* ---------- Corner tiles ---------- */
     .tile{
       position:absolute;
       width:90px;
@@ -50,24 +45,26 @@
       align-items:center;
       justify-content:center;
       user-select:none;
+      text-shadow:2px 2px #000;
     }
-
     #navy { background:#001f3f; top:0; left:0; }
-    #teal { background:#39CCCC; top:0; right:0; color:#113; text-shadow:1px 1px #fff4; }
+    #teal { background:#39CCCC; top:0; right:0; color:#123; text-shadow:1px 1px #fff4; }
     #blue { background:#0074D9; bottom:0; left:0; }
-    #aqua { background:#7FDBFF; bottom:0; right:0; color:#113; text-shadow:1px 1px #fff4; }
+    #aqua { background:#7FDBFF; bottom:0; right:0; color:#123; text-shadow:1px 1px #fff4; }
 
-    /* ---------------Center panel + footer box----------------- */
+    /* ---------- Center panel + centered Footer box ---------- */
     .panel{
+      position:absolute;
+      top:50%;
+      left:50%;
+      transform:translate(-50%, -50%);  /* true centering inside wrapper */
       width:560px;
       height:180px;
-      margin:120px auto;                 /* centers the panel in wrapper */
       background:#fff;
       border:1px solid #d9d9d9;
       display:flex;
       align-items:center;
       justify-content:center;
-      box-shadow:0 0 0 0 transparent;
     }
 
     #footer{
@@ -85,17 +82,16 @@
   <h1>Exercise</h1>
 
   <section id="wrapper">
-    <!-- Corner tiles -->
+    <!-- four corners -->
     <div id="navy" class="tile">Navy</div>
     <div id="teal" class="tile">Teal</div>
     <div id="blue" class="tile">Blue</div>
     <div id="aqua" class="tile">Aqua</div>
 
-    <!-- Center panel with the footer box -->
+    <!-- centered inner panel with centered footer -->
     <div class="panel">
       <div id="footer">Footer</div>
     </div>
   </section>
 </body>
-
 </html>
