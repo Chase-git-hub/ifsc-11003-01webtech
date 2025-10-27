@@ -31,34 +31,25 @@
       margin: 0 auto;
       text-shadow: 2px 2px #000;
       padding: 20px;
+      overflow: hidden; /* contain floats */
     }
 
     /* Colored Boxes */
-  #navy, #teal, #blue, #aqua {
-    width: 170px;
-    height: 150px;
-    float: left;
-    margin-right: 20px;
-    line-height: 120px; /* adjust vertical centering */
-    padding-bottom: 30px; /* pushes footer lower */
-}
+    #navy, #teal, #blue, #aqua {
+      width: 170px;
+      height: 150px;
+      float: left;
+      margin-right: 20px;
+      margin-bottom: 20px; /* ✅ creates space above footer */
+      line-height: 150px;
+    }
 
-    #navy {
-      background-color: #001f3f;
-      padding-bottom: 50px;
-    }
-    #teal {
-      background-color: #39CCCC;
-      padding-bottom: 50px;
-    }
-    #blue {
-      background-color: #0074D9;
-      padding-bottom: 50px;
-    }
+    #navy { background-color: #001f3f; }
+    #teal { background-color: #39CCCC; }
+    #blue { background-color: #0074D9; }
     #aqua {
       background-color: #7FDBFF;
-      margin-right: 0; /* last one, no margin */
-      padding-bottom: 50px;
+      margin-right: 0; /* last box no gap */
     }
 
     /* Footer */
@@ -66,7 +57,7 @@
       background-color: #666;
       clear: both;
       padding: 10px;
-      margin-top: 20px;
+      margin-top: 10px;
     }
 
     h1 {
@@ -77,6 +68,7 @@
     }
   </style>
 </head>
+
 <body>
   <h1>float-2</h1>
   <section id="wrapper">
@@ -88,4 +80,5 @@
     <div id="footer">Footer</div>
   </section>
 </body>
+
 </html>
