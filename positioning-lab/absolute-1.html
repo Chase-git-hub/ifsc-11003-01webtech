@@ -5,66 +5,68 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Positioning Lab</title>
+
   <style>
-    /* ---------- Reset / base ---------- */
-    html { box-sizing: border-box; }
-    *, *::before, *::after { box-sizing: inherit; }
+    html, body {
+      height: 100%;
+    }
 
     body{
       margin:0;
       background:#ECECEC;
       font:bold 16px Tahoma, Geneva, sans-serif;
-      color:#fff;
+      color:#FFF;
       text-align:center;
       line-height:24px;
     }
 
     h1{
-      margin:20px 0;
+      margin:20px 0 40px;
       color:#000;
       font-weight:normal;
+      text-shadow:none;
     }
 
-    /* ---------- Wrapper (anchor for absolute children) ---------- */
+    /* ---- Wrapper ---- */
     #wrapper{
       position:relative;
       width:800px;
-      height:520px;                 /* fixed stage to match the spec */
-      margin:0 auto 60px;
+      height:520px;
+      margin:0 auto;
       background:#fff;
       border:1px solid #c0c0c0;
-      overflow:hidden;
     }
 
-    /* ---------- Corner tiles ---------- */
+    /* ---- Corner tiles ON PAGE (not wrapper) ---- */
     .tile{
-      position:absolute;
+      position:fixed;
       width:90px;
       height:90px;
       display:flex;
       align-items:center;
       justify-content:center;
-      user-select:none;
       text-shadow:2px 2px #000;
+      user-select:none;
     }
-    #navy { background:#001f3f; top:0; left:0; }
-    #teal { background:#39CCCC; top:0; right:0; color:#123; text-shadow:1px 1px #fff4; }
-    #blue { background:#0074D9; bottom:0; left:0; }
-    #aqua { background:#7FDBFF; bottom:0; right:0; color:#123; text-shadow:1px 1px #fff4; }
 
-    /* ---------- Center panel + centered Footer box ---------- */
+    #navy { background:#001f3f; top:0; left:0; }
+    #teal { background:#39CCCC; top:0; right:0; color:#003; }
+    #blue { background:#0074D9; bottom:0; left:0; }
+    #aqua { background:#7FDBFF; bottom:0; right:0; color:#003; }
+
+    /* ---- Center panel inside wrapper ---- */
     .panel{
+      width:560px;
+      height:180px;
       position:absolute;
       top:50%;
       left:50%;
-      transform:translate(-50%, -50%);  /* true centering inside wrapper */
-      width:560px;
-      height:180px;
+      transform:translate(-50%,-50%);
       background:#fff;
-      border:1px solid #d9d9d9;
+      border:1px solid #ddd;
       display:flex;
-      align-items:center;
       justify-content:center;
+      align-items:center;
     }
 
     #footer{
@@ -74,24 +76,25 @@
       display:flex;
       align-items:center;
       justify-content:center;
-      text-shadow:2px 2px #000;
     }
   </style>
 </head>
+
 <body>
   <h1>Exercise</h1>
 
-  <section id="wrapper">
-    <!-- four corners -->
-    <div id="navy" class="tile">Navy</div>
-    <div id="teal" class="tile">Teal</div>
-    <div id="blue" class="tile">Blue</div>
-    <div id="aqua" class="tile">Aqua</div>
+  <!-- Corner boxes OUTSIDE wrapper -->
+  <div id="navy" class="tile">Navy</div>
+  <div id="teal" class="tile">Teal</div>
+  <div id="blue" class="tile">Blue</div>
+  <div id="aqua" class="tile">Aqua</div>
 
-    <!-- centered inner panel with centered footer -->
+  <!-- Layout box -->
+  <section id="wrapper">
     <div class="panel">
       <div id="footer">Footer</div>
     </div>
   </section>
+
 </body>
 </html>
