@@ -4,19 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="NASA Mars Rover Program - Robotic Explorers on the Red Planet">
-  <meta name="keywords" content="NASA, Mars Rover, Curiosity, Perseverance, Space Exploration">
+  <meta name="keywords" content="NASA, Mars Rover, Curiosity, Perseverance, Space Exploration, Gale Crater, Jezero Crater">
   <meta name="robots" content="noindex">
   <title>NASA Mars Rovers | Home</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to main content</a>
   <header role="banner">
-    <img src="https://www.nasa.gov/sites/default/files/thumbnails/image/nasa-logo-web-rgb.png" alt="NASA Logo" class="logo">
+    <img src="images/nasa-logo.png" alt="NASA logo" class="logo" width="200" height="171">
     <h1>NASA Mars Rovers</h1>
     <p class="tagline">Robotic Explorers on the Red Planet</p>
     <nav role="navigation" aria-label="Main Navigation">
       <ul class="nav">
-        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html" aria-current="page">Home</a></li>
         <li><a href="mission.html">Mission History</a></li>
         <li><a href="faq.html">FAQ</a></li>
       </ul>
@@ -24,7 +25,7 @@
     <button id="toggle-dark">DARK MODE</button>
   </header>
 
-  <main role="main">
+  <main id="main" role="main">
     <section>
       <h2>Exploring the Red Planet</h2>
       <p>The NASA Mars Rover program represents humanity's bold effort to explore the Martian surface. Each rover has advanced our understanding of Mars, searching for signs of water, studying geology, and testing new technologies that will pave the way for future human missions.</p>
@@ -34,14 +35,24 @@
       <h2>Featured Rovers</h2>
       <article>
         <h3>Curiosity Rover</h3>
-        <img src="https://mars.nasa.gov/system/news_items/main_images/9402_PIA25320-FigureA-web.jpg" alt="Curiosity Rover on Mars surface" class="rover-img">
-        <p>Launched in 2011, Curiosity's mission was to determine whether Mars ever had the right conditions to support life. It landed in Gale Crater in 2012 and continues to investigate the planet's geology and climate.</p>
+        <ul>
+          <li><strong>Mission goals:</strong> Assess past habitability; study geology and climate.</li>
+          <li><strong>Launch/Landing:</strong> Nov 26, 2011 / Aug 6, 2012 (Gale Crater).</li>
+          <li><strong>Discoveries:</strong> Ancient lake environments; organics; methane variations.</li>
+          <li><strong>Key features:</strong> RTG power source, ChemCam laser, SAM analysis suite.</li>
+        </ul>
+        <img src="images/curiosity.jpg" alt="Curiosity rover on the Martian surface" class="rover-img" width="1280" height="720" loading="lazy">
       </article>
 
       <article>
         <h3>Perseverance Rover</h3>
-        <img src="https://mars.nasa.gov/system/news_items/main_images/9405_PIA25023-web.jpg" alt="Perseverance Rover on Martian terrain" class="rover-img">
-        <p>Perseverance landed in Jezero Crater in 2021, carrying the first helicopter ever to fly on another planet — Ingenuity. Its mission includes collecting rock samples for future return to Earth and studying the potential for ancient microbial life.</p>
+        <ul>
+          <li><strong>Mission goals:</strong> Seek biosignatures; cache rock samples for return.</li>
+          <li><strong>Launch/Landing:</strong> Jul 30, 2020 / Feb 18, 2021 (Jezero Crater).</li>
+          <li><strong>Discoveries:</strong> River delta deposits; igneous rocks; preserved organic carbon.</li>
+          <li><strong>Key features:</strong> Sample caching arm, Ingenuity helicopter, SHERLOC & PIXL tools.</li>
+        </ul>
+        <img src="images/perseverance.jpg" alt="Perseverance rover in Jezero Crater" class="rover-img" width="1280" height="720" loading="lazy">
       </article>
     </section>
   </main>
@@ -49,7 +60,7 @@
   <footer role="contentinfo">
     <p>This website was created as a student project for educational purposes. NASA is not affiliated with or endorsing this work.</p>
     <p>Contact: <a href="mailto:info@example.com">info@example.com</a></p>
-    <p><a href="https://mars.nasa.gov" target="_blank">Visit NASA's Mars Exploration Program</a></p>
+    <p><a href="https://mars.nasa.gov" target="_blank" rel="noopener noreferrer">Visit NASA's Mars Exploration Program</a></p>
   </footer>
 
   <script src="toggle.js"></script>
