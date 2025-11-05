@@ -26,10 +26,14 @@ header {
   text-align: center;
 }
 
+/* Logo */
 .logo {
-  width: 100px;
+  width: 220px;
+  height: auto;
+  aspect-ratio: 3 / 1;
   display: block;
   margin: 0 auto 10px;
+  object-fit: contain;
 }
 
 h1, h2, h3 {
@@ -68,11 +72,16 @@ main {
   margin: auto;
 }
 
+/* ===== Rover Images ===== */
 .rover-img {
+  display: block;
   width: 100%;
-  max-width: 500px;
+  max-width: 800px;
+  aspect-ratio: 16 / 9;        /* wide landscape */
+  height: auto;
   border-radius: 10px;
-  margin-bottom: 10px;
+  margin: 20px auto;
+  object-fit: cover;
 }
 
 /* Timeline */
@@ -120,7 +129,7 @@ a:focus, button:focus, summary:focus {
   outline-offset: 2px;
 }
 
-/* Light Mode */
+/* ===== Light Mode ===== */
 body.light-mode {
   background-color: #f8f9fa;
   color: #0b0c10;
@@ -144,8 +153,12 @@ body.light-mode #toggle-dark {
   color: #fff;
 }
 
-/* Responsive */
+/* ===== Responsive ===== */
 @media (max-width: 600px) {
   .nav li { display: block; margin: 10px 0; }
-  .rover-img { width: 100%; }
+  .rover-img {
+    width: 100%;
+    max-width: 100%;
+    aspect-ratio: 16 / 9;
+  }
 }
