@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="NASA Mars Rover Program - Robotic Explorers on the Red Planet" />
-  <meta name="keywords" content="NASA, Mars Rover, Curiosity, Perseverance, Space Exploration, Gale Crater, Jezero Crater" />
-  <meta name="robots" content="noindex" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="NASA Mars Rover Program - Robotic Explorers on the Red Planet">
+  <meta name="keywords" content="NASA, Mars Rover, Curiosity, Perseverance, Space Exploration, Gale Crater, Jezero Crater">
+  <meta name="robots" content="noindex">
   <title>NASA Mars Rovers | Home</title>
-  <link rel="stylesheet" href="style.css?v=4" />
+  <link rel="stylesheet" href="style.css?v=3">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
-
   <header role="banner">
-    <img src="images/nasa-logo.png" alt="NASA logo" class="logo" />
+    <img src="images/nasa-logo.png" alt="NASA logo" class="logo">
     <h1>NASA Mars Rovers</h1>
     <p class="tagline">Robotic Explorers on the Red Planet</p>
     <nav role="navigation" aria-label="Main Navigation">
@@ -29,9 +28,7 @@
   <main id="main" role="main">
     <section>
       <h2>Exploring the Red Planet</h2>
-      <p>
-        The NASA Mars Rover program represents humanity’s bold effort to explore the Martian surface. Each rover has advanced our understanding of Mars, searching for signs of water, studying geology, and testing new technologies that will pave the way for future human missions.
-      </p>
+      <p>The NASA Mars Rover program represents humanity’s bold effort to explore the Martian surface. Each rover has advanced our understanding of Mars, searching for signs of water, studying geology, and testing new technologies that will pave the way for future human missions.</p>
     </section>
 
     <section>
@@ -44,7 +41,7 @@
           <li><strong>Discoveries:</strong> Ancient lake environments; organics; methane variations.</li>
           <li><strong>Key features:</strong> RTG power source, ChemCam laser, SAM analysis suite.</li>
         </ul>
-        <img src="images/curiosity.jpg" alt="Curiosity rover on the Martian surface" class="rover-img" loading="lazy" />
+        <img src="images/curiosity.jpg" alt="Curiosity rover on the Martian surface" class="rover-img" loading="lazy">
       </article>
 
       <article>
@@ -55,46 +52,17 @@
           <li><strong>Discoveries:</strong> River delta deposits; igneous rocks; preserved organic carbon.</li>
           <li><strong>Key features:</strong> Sample caching arm, Ingenuity helicopter, SHERLOC & PIXL tools.</li>
         </ul>
-        <img src="images/perseverance.jpg" alt="Perseverance rover in Jezero Crater" class="rover-img" loading="lazy" />
+        <img src="images/perseverance.jpg" alt="Perseverance rover in Jezero Crater" class="rover-img" loading="lazy">
       </article>
     </section>
   </main>
 
   <footer role="contentinfo">
-    <p>
-      This website was created as a student project for educational purposes. NASA is not affiliated with or endorsing this work.
-    </p>
-
-    <form id="contactForm">
-      <h2>Contact Us</h2>
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" required />
-
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required />
-
-      <label for="message">Message:</label>
-      <textarea id="message" name="message" rows="4" required></textarea>
-
-      <button type="submit">Send Message</button>
-      <p id="formResponse" class="hidden">Thank you! Your message has been submitted.</p>
-    </form>
-
-    <p>
-      <a href="https://mars.nasa.gov" target="_blank" rel="noopener noreferrer">Visit NASA’s Mars Exploration Program</a>
-    </p>
+    <p>This website was created as a student project for educational purposes. NASA is not affiliated with or endorsing this work.</p>
+    <p>Contact: <a href="mailto:info@example.com">info@example.com</a></p>
+    <p><a href="https://mars.nasa.gov" target="_blank" rel="noopener noreferrer">Visit NASA’s Mars Exploration Program</a></p>
   </footer>
 
   <script src="toggle.js"></script>
-  <script>
-    const form = document.getElementById('contactForm');
-    const response = document.getElementById('formResponse');
-    form.addEventListener('submit', e => {
-      e.preventDefault();
-      form.reset();
-      response.classList.remove('hidden');
-      setTimeout(() => response.classList.add('hidden'), 4000);
-    });
-  </script>
 </body>
 </html>

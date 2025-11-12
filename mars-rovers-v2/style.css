@@ -1,58 +1,132 @@
-/* ... existing rover + layout styles remain ... */
-
-/* Contact Form */
-form {
-  max-width: 400px;
-  margin: 20px auto;
-  text-align: left;
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
   background-color: #0b0c10;
-  padding: 20px;
-  border-radius: 10px;
-  border: 1px solid #45a29e;
+  color: #e5e5e5;
+  line-height: 1.6;
+  transition: background-color 0.4s, color 0.4s;
 }
 
-form h2 {
-  color: #66fcf1;
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: #66fcf1;
+  color: #0b0c10;
+  padding: 8px 12px;
+  z-index: 1000;
+}
+.skip-link:focus { left: 8px; }
+
+header {
+  background-color: #1f2833;
+  padding: 20px;
   text-align: center;
 }
 
-label {
+.logo {
   display: block;
-  margin-top: 10px;
+  margin: 0 auto 10px;
+  width: clamp(160px, 25vw, 260px);
+  aspect-ratio: 3 / 1;
+  object-fit: contain;
 }
 
-input, textarea {
-  width: 100%;
-  padding: 8px;
-  margin-top: 5px;
-  border: 1px solid #45a29e;
-  border-radius: 4px;
-  background-color: #1f2833;
-  color: #e5e5e5;
-}
+h1, h2, h3 { color: #66fcf1; }
+.tagline { color: #c5c6c7; margin-bottom: 10px; }
 
-button[type="submit"] {
+.nav { list-style: none; padding: 0; }
+.nav li { display: inline; margin: 0 15px; }
+
+.nav a {
+  color: #66fcf1;
+  text-decoration: none;
+  font-weight: bold;
+}
+.nav a:hover, .nav a:focus { text-decoration: underline; }
+
+#toggle-dark {
   background-color: #45a29e;
   border: none;
   color: white;
-  padding: 10px 16px;
+  padding: 8px 16px;
   margin-top: 10px;
-  width: 100%;
   border-radius: 5px;
   cursor: pointer;
 }
+#toggle-dark:hover { background-color: #66fcf1; color: #0b0c10; }
 
-button[type="submit"]:hover {
-  background-color: #66fcf1;
+main {
+  padding: 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* Rover images: wide, short, and cropped */
+.rover-img {
+  display: block;
+  width: min(100%, 900px);
+  height: clamp(200px, 45vw, 400px);
+  object-fit: cover;
+  object-position: center;
+  border-radius: 12px;
+  margin: 20px auto;
+}
+
+/* Timeline */
+.timeline { border-left: 3px solid #66fcf1; margin-left: 20px; padding-left: 20px; }
+.event { margin-bottom: 30px; }
+
+/* Table */
+table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+table, th, td { border: 1px solid #45a29e; }
+th, td { padding: 10px; text-align: left; }
+caption { caption-side: top; font-weight: bold; margin-bottom: 10px; }
+
+/* FAQ */
+details { background-color: #1f2833; padding: 10px; margin-bottom: 10px; border-radius: 5px; }
+
+/* Footer */
+footer {
+  background-color: #1f2833;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9em;
+}
+footer a { color: #66fcf1; }
+
+/* Focus */
+a:focus, button:focus, summary:focus {
+  outline: 3px solid #66fcf1;
+  outline-offset: 2px;
+}
+
+/* Light Mode */
+body.light-mode {
+  background-color: #f8f9fa;
   color: #0b0c10;
 }
-
-.hidden {
-  display: none;
+body.light-mode header,
+body.light-mode footer,
+body.light-mode details {
+  background-color: #e3e3e3;
+}
+body.light-mode h1,
+body.light-mode h2,
+body.light-mode h3,
+body.light-mode a {
+  color: #0b3d91;
+}
+body.light-mode #toggle-dark {
+  background-color: #0b3d91;
+  color: #fff;
 }
 
-#formResponse {
-  text-align: center;
-  color: #66fcf1;
-  margin-top: 10px;
+/* Responsive */
+@media (max-width: 600px) {
+  .nav li { display: block; margin: 10px 0; }
+  .rover-img {
+    width: 100%;
+    height: clamp(180px, 50vw, 320px);
+  }
 }
