@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Frequently Asked Questions about NASA Mars Rovers">
-  <meta name="keywords" content="NASA, Mars Rover, Curiosity, Perseverance, Mars FAQ, Space Exploration, Ingenuity, RTG, Jezero Crater">
-  <meta name="robots" content="noindex">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Frequently Asked Questions about NASA Mars Rovers" />
+  <meta name="keywords" content="NASA, Mars Rover, Curiosity, Perseverance, Mars FAQ, Space Exploration, Ingenuity, RTG, Jezero Crater" />
+  <meta name="robots" content="noindex" />
   <title>NASA Mars Rovers | FAQ</title>
-  <link rel="stylesheet" href="style.css?v=3">
+  <link rel="stylesheet" href="style.css?v=4" />
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
+
   <header>
-    <img src="images/nasa-logo.png" alt="NASA logo" class="logo">
+    <img src="images/nasa-logo.png" alt="NASA logo" class="logo" />
     <h1>Frequently Asked Questions</h1>
     <nav role="navigation" aria-label="Main Navigation">
       <ul class="nav">
@@ -21,7 +22,7 @@
         <li><a href="faq.html" aria-current="page">FAQ</a></li>
       </ul>
     </nav>
-    <button id="toggle-dark">Dark Mode</button>
+    <button id="toggle-dark">🌙 Dark Mode</button>
   </header>
 
   <main id="main">
@@ -41,16 +42,40 @@
       </details>
       <details>
         <summary>Can rovers return to Earth?</summary>
-        <p>No. They're designed to operate permanently on Mars. Perseverance, however, is caching samples for a future return mission.</p>
+        <p>No. They’re designed to operate permanently on Mars. Perseverance, however, is caching samples for a future return mission.</p>
       </details>
     </section>
   </main>
 
   <footer>
     <p>This website was created as a student project for educational purposes. NASA is not affiliated with or endorsing this work.</p>
-    <p>Contact: <a href="mailto:info@example.com">info@example.com</a></p>
+
+    <form id="contactForm">
+      <h2>Contact Us</h2>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" rows="4" required></textarea>
+
+      <button type="submit">Send Message</button>
+      <p id="formResponse" class="hidden">Thank you! Your message has been submitted.</p>
+    </form>
   </footer>
 
   <script src="toggle.js"></script>
+  <script>
+    const form = document.getElementById('contactForm');
+    const response = document.getElementById('formResponse');
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      form.reset();
+      response.classList.remove('hidden');
+      setTimeout(() => response.classList.add('hidden'), 4000);
+    });
+  </script>
 </body>
 </html>
