@@ -1,40 +1,210 @@
-<!-- IMAGE SLIDESHOW SECTION   -->
-<!-- ========================== -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Course Image Slideshow</title>
 
-<section id="image-slideshow">
-  <h2>Course Image Slideshow</h2>
+  <!-- Slideshow styles -->
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 20px;
+    }
 
-  <div class="slideshow-container">
+    h1, h2 {
+      margin-bottom: 10px;
+    }
 
-    <!-- Slide 1 -->
-    <div class="slide active fade">
-      <img src="images/slide1.jpg" alt="Slide 1">
-      <div class="caption">Caption for Slide 1</div>
+    /* Slideshow wrapper */
+    #image-slideshow {
+      max-width: 800px;
+      margin: 30px auto;
+      text-align: center;
+    }
+
+    .slideshow-container {
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    .slide {
+      display: none;
+      position: relative;
+    }
+
+    .slide.active {
+      display: block;
+    }
+
+    .slide img {
+      width: 100%;
+      display: block;
+    }
+
+    .caption {
+      position: absolute;
+      bottom: 10px;
+      width: 100%;
+      padding: 10px;
+      background: rgba(0,0,0,0.5);
+      color: #fff;
+      font-size: 0.9rem;
+    }
+
+    /* Buttons */
+    .prev, .next {
+      position: absolute;
+      top: 50%;
+      padding: 12px;
+      font-size: 20px;
+      border: none;
+      background: rgba(0,0,0,0.5);
+      color: #fff;
+      cursor: pointer;
+      transform: translateY(-50%);
+      border-radius: 50%;
+    }
+
+    .prev:hover, .next:hover {
+      background: rgba(0,0,0,0.8);
+    }
+
+    .prev {
+      left: 15px;
+    }
+
+    .next {
+      right: 15px;
+    }
+
+    /* Dots */
+    .dots-container {
+      margin-top: 12px;
+    }
+
+    .dot {
+      height: 12px;
+      width: 12px;
+      display: inline-block;
+      margin: 0 4px;
+      border-radius: 50%;
+      background: #bbb;
+      cursor: pointer;
+    }
+
+    .dot.active {
+      background: #333;
+    }
+
+    /* Fade animation */
+    .fade {
+      animation: fadeEffect 0.8s;
+    }
+
+    @keyframes fadeEffect {
+      from { opacity: 0.3; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Course Image Slideshow</h1>
+
+  <!-- IMAGE SLIDESHOW SECTION -->
+  <section id="image-slideshow">
+    <div class="slideshow-container">
+
+      <!-- Slide 1 -->
+      <div class="slide active fade">
+        <!-- update these src paths to your real image files -->
+        <img src="images/slide1.jpg" alt="Slide 1">
+        <div class="caption">Caption for Slide 1</div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="slide fade">
+        <img src="images/slide2.jpg" alt="Slide 2">
+        <div class="caption">Caption for Slide 2</div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="slide fade">
+        <img src="images/slide3.jpg" alt="Slide 3">
+        <div class="caption">Caption for Slide 3</div>
+      </div>
+
+      <!-- Buttons -->
+      <button class="prev" aria-label="Previous slide">&#10094;</button>
+      <button class="next" aria-label="Next slide">&#10095;</button>
     </div>
 
-    <!-- Slide 2 -->
-    <div class="slide fade">
-      <img src="images/slide2.jpg" alt="Slide 2">
-      <div class="caption">Caption for Slide 2</div>
+    <!-- Dots -->
+    <div class="dots-container">
+      <span class="dot active" data-slide="0"></span>
+      <span class="dot" data-slide="1"></span>
+      <span class="dot" data-slide="2"></span>
     </div>
+  </section>
 
-    <!-- Slide 3 -->
-    <div class="slide fade">
-      <img src="images/slide3.jpg" alt="Slide 3">
-      <div class="caption">Caption for Slide 3</div>
-    </div>
+  <!-- Slideshow script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const slides = document.querySelectorAll(".slide");
+      const dots = document.querySelectorAll(".dot");
+      const prev = document.querySelector(".prev");
+      const next = document.querySelector(".next");
 
-    <!-- Buttons -->
-    <button class="prev">&#10094;</button>
-    <button class="next">&#10095;</button>
+      let index = 0;
+      let timer;
 
-  </div>
+      function showSlide(i) {
+        if (i >= slides.length) index = 0;
+        else if (i < 0) index = slides.length - 1;
+        else index = i;
 
-  <!-- Dots -->
-  <div class="dots-container">
-    <span class="dot active" data-slide="0"></span>
-    <span class="dot" data-slide="1"></span>
-    <span class="dot" data-slide="2"></span>
-  </div>
+        slides.forEach(s => s.classList.remove("active"));
+        dots.forEach(d => d.classList.remove("active"));
 
-</section>
+        slides[index].classList.add("active");
+        dots[index].classList.add("active");
+      }
+
+      function autoSlide() {
+        timer = setInterval(() => {
+          showSlide(index + 1);
+        }, 4000); // change slide every 4 seconds
+      }
+
+      function resetTimer() {
+        clearInterval(timer);
+        autoSlide();
+      }
+
+      prev.addEventListener("click", () => {
+        showSlide(index - 1);
+        resetTimer();
+      });
+
+      next.addEventListener("click", () => {
+        showSlide(index + 1);
+        resetTimer();
+      });
+
+      dots.forEach(dot => {
+        dot.addEventListener("click", () => {
+          showSlide(parseInt(dot.dataset.slide, 10));
+          resetTimer();
+        });
+      });
+
+      // initialize
+      showSlide(index);
+      autoSlide();
+    });
+  </script>
+</body>
+</html>
