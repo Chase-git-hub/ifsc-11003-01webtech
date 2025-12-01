@@ -1,0 +1,91 @@
+  /* Slideshow container */
+  #image-slideshow {
+    max-width: 800px;
+    margin: 30px auto;
+    text-align: center;
+  }
+
+  .slideshow-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+  }
+
+  .slide {
+    display: none;
+    position: relative;
+  }
+
+  .slide.active {
+    display: block;
+  }
+
+  .slide img {
+    width: 100%;
+    display: block;
+  }
+
+  .caption {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    padding: 10px;
+    background: rgba(0,0,0,0.5);
+    color: #fff;
+    font-size: 0.9rem;
+  }
+
+  /* Buttons */
+  .prev, .next {
+    position: absolute;
+    top: 50%;
+    padding: 12px;
+    font-size: 20px;
+    border: none;
+    background: rgba(0,0,0,0.4);
+    color: white;
+    cursor: pointer;
+    transform: translateY(-50%);
+    border-radius: 50%;
+  }
+
+  .prev:hover, .next:hover {
+    background: rgba(0,0,0,0.7);
+  }
+
+  .prev {
+    left: 15px;
+  }
+
+  .next {
+    right: 15px;
+  }
+
+  /* Dots */
+  .dots-container {
+    margin-top: 12px;
+  }
+
+  .dot {
+    height: 12px;
+    width: 12px;
+    display: inline-block;
+    margin: 0 4px;
+    border-radius: 50%;
+    background: #bbb;
+    cursor: pointer;
+  }
+
+  .dot.active {
+    background: #333;
+  }
+
+  /* Fade animation */
+  .fade {
+    animation: fadeEffect 0.8s;
+  }
+
+  @keyframes fadeEffect {
+    from { opacity: 0.3; }
+    to { opacity: 1; }
+  }
