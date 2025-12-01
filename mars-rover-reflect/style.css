@@ -1,0 +1,21 @@
+/* Reflection Section */
+#reflection {
+  background-color: #1f2833;
+  padding: 30px;
+  margin: 40px auto;
+  border-radius: 10px;
+  max-width: 900px;
+}
+
+#reflection h2 {
+  color: #66fcf1;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#reflection p {
+  margin-bottom: 16px;
+  text-align: justify;
+  color: #e5e5e5;
+  line-height: 1.7;
+}
