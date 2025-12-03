@@ -32,5 +32,5 @@ img{
 .slick-dots li.slick-active button:focus .slick-dot-icon,
 .slick-autoplay-toggle-button:focus 
 {
-    color:black;
+    color:rgb(255, 0, 0);
 }
